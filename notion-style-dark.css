@@ -740,10 +740,8 @@ li > .outline-item-active {
   border-bottom-color: var(--border-color);
 }
 #file-library-list .file-list-item {
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 6px 12px;
 }
-
 #file-library-list .file-list-item.active,
 #file-library-search-result .ty-search-item.active {
   border-radius: 5px;
@@ -753,11 +751,7 @@ li > .outline-item-active {
   padding: 6px 12px;
 }
 #file-library-search-result .ty-search-item.active {
-  padding: 6px 12px 6px 0;
-}
-#file-library-list .file-list-item:first-of-type.active,
-#file-library-search-result .ty-search-item:first-of-type.active {
-  margin-top: 0;
+  padding: 6px 12px;
 }
 #file-library-list .file-list-item:hover,
 #file-library-search-result .ty-search-item:hover {
