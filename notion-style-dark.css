@@ -374,8 +374,7 @@ p {
    * ---------------------
 */
 pre {
-  --monospace: "Cascadia Code Variable", SFMono-Regular, Menlo, Consolas,
-    "PT Mono", "Liberation Mono";
+  --monospace: var(--monospace-font);
 }
 
 .md-fences {
