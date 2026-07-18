@@ -697,8 +697,7 @@ li p {
 }
 
 pre {
-  --monospace: "Cascadia Code Variable", SFMono-Regular, Menlo, Consolas,
-    "PT Mono", "Liberation Mono";
+  --monospace: var(--monospace-font);
 }
 
 /* Code fences */
@@ -1032,6 +1031,26 @@ code {
 .cm-s-typora-default .CodeMirror-selectedtext {
   background: var(--code-selection-bg) !important;
   color: var(--code-selection-color) !important;
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line > span::selection,
+.cm-s-inner .CodeMirror-line > span > span::selection,
+.cm-s-typora-default .CodeMirror-line::selection,
+.cm-s-typora-default .CodeMirror-line > span::selection,
+.cm-s-typora-default .CodeMirror-line > span > span::selection {
+  background: var(--code-selection-bg);
+  color: var(--code-selection-color);
+}
+
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line > span::-moz-selection,
+.cm-s-inner .CodeMirror-line > span > span::-moz-selection,
+.cm-s-typora-default .CodeMirror-line::-moz-selection,
+.cm-s-typora-default .CodeMirror-line > span::-moz-selection,
+.cm-s-typora-default .CodeMirror-line > span > span::-moz-selection {
+  background: var(--code-selection-bg);
+  color: var(--code-selection-color);
 }
 
 mark {

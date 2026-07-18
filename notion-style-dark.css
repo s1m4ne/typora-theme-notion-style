@@ -58,6 +58,8 @@
   /* Code Block */
   --code-block-bg-color: #202020;
   --code-tooltip-border-color: #373737;
+  --code-selection-bg: #24364e;
+  --code-selection-color: #d4d4d4;
 
   /* TODO */
   --todo-bg-color: #2483e2;
@@ -88,7 +90,39 @@ body {
 
 /* Selection */
 ::selection {
-  background-color: #24364e;
+  background-color: var(--code-selection-bg);
+  color: var(--code-selection-color);
+}
+
+.cm-s-inner .CodeMirror-selected,
+.cm-s-typora-default .CodeMirror-selected {
+  background: rgba(0, 0, 0, 0) !important;
+}
+
+.cm-s-inner .CodeMirror-selectedtext,
+.cm-s-typora-default .CodeMirror-selectedtext {
+  background: var(--code-selection-bg) !important;
+  color: var(--code-selection-color) !important;
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line > span::selection,
+.cm-s-inner .CodeMirror-line > span > span::selection,
+.cm-s-typora-default .CodeMirror-line::selection,
+.cm-s-typora-default .CodeMirror-line > span::selection,
+.cm-s-typora-default .CodeMirror-line > span > span::selection {
+  background: var(--code-selection-bg);
+  color: var(--code-selection-color);
+}
+
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line > span::-moz-selection,
+.cm-s-inner .CodeMirror-line > span > span::-moz-selection,
+.cm-s-typora-default .CodeMirror-line::-moz-selection,
+.cm-s-typora-default .CodeMirror-line > span::-moz-selection,
+.cm-s-typora-default .CodeMirror-line > span > span::-moz-selection {
+  background: var(--code-selection-bg);
+  color: var(--code-selection-color);
 }
 
 img {
@@ -374,8 +408,7 @@ p {
    * ---------------------
 */
 pre {
-  --monospace: "Cascadia Code Variable", SFMono-Regular, Menlo, Consolas,
-    "PT Mono", "Liberation Mono";
+  --monospace: var(--monospace-font);
 }
 
 .md-fences {
